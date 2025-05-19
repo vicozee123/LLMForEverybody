@@ -55,6 +55,10 @@ Normalization技术旨在应对内部协变量偏移问题，它的核心在于�
 
 - **Layer Normalization（LayerNorm）**：与BatchNorm不同，LayerNorm适用于那些在不同样本之间难以直接比较的情况，如Transformer中的自注意力机制。在这些模型中，每个位置上的数据代表了不同的特征，因此直接归一化可能会失去意义。LayerNorm的解决方案是对每个样本的所有特征进行单独归一化，而不是基于整个批次。这就像是评估每个学生在所有科目中的表现，而不是仅仅关注单一科目，这样可以更全面地理解每个学生的整体表现。
 
+- **BatchNorm适用于CV，而LayerNorm适用于NLP，这是由两个任务的本质差异决定的，视觉的特征是客观存在的特征，而语义特征更多是由上下文语义决定的一种统计特征，因此他们的标准化方法也会有所不同。**
+
+![image](https://github.com/user-attachments/assets/8ac4f784-e445-4a61-b4a9-24c71267681b)
+
 ![alt text](assest/10分钟搞清楚为什么Transformer中使用LayerNorm而不是BatchNorm/3.png)
 
 ## 参考
